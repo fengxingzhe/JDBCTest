@@ -40,7 +40,7 @@ public class StudentDAOImpl implements IStudentDAO {
     @Override
     public List<Student> listAll() throws Exception {
         String sql = "SELECT * FROM student";
-        List<Student> list = JdbcTemplete.query(sql, new StudentHandleImpl());
+        List<Student> list = JdbcTemplete.query(sql, new BeanListHandleImpl<>(Student.class));
         return list;
     }
 }
